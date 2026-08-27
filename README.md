@@ -4,9 +4,16 @@ A launch-ready website proposal for Azzim Zahid's newly announced sportswear pro
 
 ## Live website
 
-GitHub Pages deployment is configured through `.github/workflows/pages.yml`.
+The site is fully static and already sits in the repository root as `index.html`.
 
-Expected URL after the first successful deployment:
+To publish it on GitHub Pages, do the one-time repository setting:
+
+1. Open **Settings → Pages**.
+2. Under **Build and deployment**, choose **Deploy from a branch**.
+3. Choose **main** and **/(root)**.
+4. Save.
+
+Expected live URL:
 
 `https://shukritobi.github.io/hausboom-sportswear/`
 
@@ -19,7 +26,6 @@ Expected URL after the first successful deployment:
 - Sponsorship / partnership intake concept
 - Early-access lead capture
 - Mobile-first navigation and forms
-- GitHub Pages automatic deployment
 
 ## Important brand note
 
@@ -38,6 +44,6 @@ See [`RESEARCH.md`](./RESEARCH.md) for the reasoning, founder context, market no
 - Vanilla JavaScript
 - No framework
 - No build step
-- GitHub Pages
+- GitHub Pages compatible
 
 This keeps the proposal extremely lightweight and fast to deploy while remaining easy to migrate into a full commerce stack later.
