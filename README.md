@@ -1,49 +1,47 @@
-# Sportswear Launch Concept
+# SportsBoom — Premium Sportswear Concept
 
-A launch-ready website proposal for Azzim Zahid's newly announced sportswear project.
+A premium website proposal for Azzim Zahid's upcoming sportswear venture, developed around the working identity **SportsBoom**.
 
-## Live website
+SportsBoom is a deliberate naming play on **Hausboom**, but the visual system is intentionally more restrained than the beverage brand. The website uses Hausboom's flavour colours as controlled performance codes rather than broad rainbow gradients.
 
-The site is fully static and already sits in the repository root as `index.html`.
+## Current direction
 
-To publish it on GitHub Pages, do the one-time repository setting:
+- Premium black / ivory base palette
+- Mango orange as the primary SportsBoom accent
+- Blackcurrant purple as the secondary elite accent
+- Strawberry, Lemonade, Guava and Lychee used as supporting flavour codes
+- Performance-led typography and product coding
+- Drop 001 launch structure
+- Interactive teamwear kit builder
+- Structured sponsorship intake
+- Community / club positioning
+- Responsive static build with no framework dependency
 
-1. Open **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Choose **main** and **/(root)**.
-4. Save.
+## Brand logic
 
-Expected live URL:
+The idea is **same energy, sharper language**.
+
+SportsBoom should feel recognisably connected to Hausboom without looking like beverage packaging applied directly onto apparel. The flavour palette therefore appears through trims, piping, product identifiers, capsule codes and team accents while the core product language stays monochrome and premium.
+
+## Live preview
+
+Expected GitHub Pages URL once Pages is enabled for the `main` branch:
 
 `https://shukritobi.github.io/hausboom-sportswear/`
 
-## What is included
+## Production upgrade path
 
-- Responsive premium sportswear landing page
-- Multi-sport positioning
-- Drop 001 concept catalogue
-- Team / club order flow
-- Sponsorship / partnership intake concept
-- Early-access lead capture
-- Mobile-first navigation and forms
+The concept can later expand into:
 
-## Important brand note
+- Product catalogue and checkout
+- Local payment gateway integration
+- Cloudflare Pages / Workers deployment
+- Team logo uploads and player-list imports
+- Automated quotation and PDF team-kit briefs
+- Sponsorship scoring dashboard
+- CRM-ready sponsorship and team-order data
+- Sponsored team pages and referral tracking
 
-The final name of Azzim's new sportswear label was not reliably confirmed in the public sources available during research. The website therefore uses **SPORT//01** as a temporary concept identity rather than presenting an invented name as official.
+## Disclaimer
 
-Once the real brand identity and product photography are available, the placeholder mark, copy, product slots and imagery can be replaced without changing the page architecture.
-
-## Research
-
-See [`RESEARCH.md`](./RESEARCH.md) for the reasoning, founder context, market notes and launch strategy behind the site.
-
-## Stack
-
-- Static HTML
-- CSS
-- Vanilla JavaScript
-- No framework
-- No build step
-- GitHub Pages compatible
-
-This keeps the proposal extremely lightweight and fast to deploy while remaining easy to migrate into a full commerce stack later.
+This is an independent proposal concept prepared for Azzim Zahid. SportsBoom is currently a working concept identity and this repository is not an official Hausboom or Bulan Bintang website.
