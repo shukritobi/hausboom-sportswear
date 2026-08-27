@@ -3,392 +3,138 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#0a0a0a" />
-  <meta name="description" content="A launch-ready Malaysian performance sportswear concept for court, pitch, training and community." />
-  <title>SPORT//01 — Performance Sportswear Concept</title>
+  <meta name="theme-color" content="#0b0d10" />
+  <meta name="description" content="SportsBoom concept: a premium Malaysian performance sportswear platform inspired by Hausboom's flavour identity." />
+  <title>SportsBoom — Performance Sportswear Concept</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --ink:#0a0a0a;
-      --paper:#f4f3ed;
-      --lime:#dfff00;
-      --muted:#9b9b92;
-      --line:rgba(255,255,255,.14);
+      --ink:#0b0d10;
+      --ink-2:#12151a;
+      --paper:#f4f1ea;
+      --paper-2:#e8e4db;
+      --text:#f7f4ed;
+      --muted:#9a9a95;
+      --line:rgba(255,255,255,.12);
+      --darkline:rgba(11,13,16,.14);
+      --orange:#f28a2e;
+      --yellow:#e3c34f;
+      --green:#6cad67;
+      --purple:#5f4b96;
+      --red:#b84e56;
+      --pink:#d8a9b6;
       --max:1440px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--ink);color:#fff;font-family:Inter,Arial,Helvetica,sans-serif;overflow-x:hidden}
+    body{margin:0;background:var(--ink);color:var(--text);font-family:"Manrope",Arial,sans-serif;overflow-x:hidden}
     a{color:inherit;text-decoration:none}
     button,input,select,textarea{font:inherit}
-    img{display:block;width:100%;height:100%;object-fit:cover}
     .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
-    .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--lime)}
-    .display{font-family:Arial Black,Impact,sans-serif;font-weight:900;letter-spacing:-.055em;text-transform:uppercase;line-height:.84;margin:0}
-    .noise{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:99;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E")}
-
-    .topbar{height:35px;background:var(--lime);color:#080808;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.16em;white-space:nowrap;overflow:hidden}
-    nav{position:absolute;top:35px;left:0;right:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.18)}
+    .noise{position:fixed;inset:0;pointer-events:none;opacity:.028;z-index:100;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+    .flavour-line{height:4px;background:linear-gradient(90deg,var(--red) 0 16.6%,var(--orange) 16.6% 33.2%,var(--yellow) 33.2% 49.8%,var(--green) 49.8% 66.4%,var(--purple) 66.4% 83%,var(--pink) 83% 100%)}
+    .eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:#bbb9b2;margin:0 0 20px}
+    .eyebrow.dark{color:#6d6a64}
+    .display{font-family:"Archivo Black",Impact,sans-serif;text-transform:uppercase;letter-spacing:-.052em;line-height:.88;margin:0}
+    .accent{color:var(--orange)}
+    .topnote{height:34px;display:flex;align-items:center;justify-content:center;background:#15181d;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#b7b5af;font-weight:800}
+    nav{position:absolute;top:38px;left:0;right:0;z-index:40;border-bottom:1px solid var(--line)}
     .navinner{height:76px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
-    .logo{font-family:Arial Black,Impact,sans-serif;font-size:22px;letter-spacing:-.06em;text-transform:uppercase}
-    .logo i{font-style:normal;color:var(--lime)}
-    .navlinks{display:flex;gap:24px;font-size:12px;text-transform:uppercase;font-weight:800;letter-spacing:.08em}
-    .navright{justify-self:end;display:flex;gap:8px;align-items:center}
-    .pill{border:1px solid rgba(255,255,255,.32);padding:11px 15px;border-radius:999px;font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:.07em;background:rgba(0,0,0,.16);backdrop-filter:blur(9px);cursor:pointer;color:#fff}
-    .pill.lime{background:var(--lime);color:#080808;border-color:var(--lime)}
-
-    .hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;background:#111;overflow:hidden}
-    .hero-media{position:absolute;inset:0}
-    .hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.46) 45%,rgba(0,0,0,.08) 72%),linear-gradient(0deg,rgba(0,0,0,.78),transparent 52%)}
-    .hero-media img{object-position:center 44%;filter:saturate(.78) contrast(1.08)}
-    .hero-grid{position:relative;z-index:2;padding:170px 0 54px;display:grid;grid-template-columns:1.55fr .45fr;align-items:end;gap:36px;width:100%}
-    .hero h1{font-size:clamp(78px,11.4vw,190px);max-width:1100px}
-    .hero .sub{max-width:520px;font-size:17px;line-height:1.55;color:#e5e5de;margin:26px 0 30px}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:10px}
-    .cta{display:inline-flex;align-items:center;gap:12px;padding:16px 21px;border-radius:2px;background:var(--lime);color:#080808;font-size:12px;text-transform:uppercase;font-weight:950;letter-spacing:.08em;border:1px solid var(--lime);cursor:pointer}
-    .cta.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
-    .arrow{font-size:18px;line-height:0}
-    .hero-meta{justify-self:end;width:min(310px,100%);border-top:1px solid rgba(255,255,255,.5);padding-top:16px}
-    .meta-row{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.14);padding:12px 0;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
-    .meta-row span:last-child{color:#d7d7ce;font-weight:800;text-align:right}
-    .scrolltag{position:absolute;right:20px;bottom:40%;z-index:3;transform:rotate(90deg);transform-origin:right bottom;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:800}
-
-    .ticker{background:var(--lime);color:#0b0b0b;padding:15px 0;overflow:hidden;border-block:1px solid #000}
-    .ticker-track{display:flex;gap:28px;white-space:nowrap;width:max-content;animation:marquee 24s linear infinite;font-family:Arial Black,Impact,sans-serif;text-transform:uppercase;font-size:24px;letter-spacing:-.03em}
-    .ticker b{font-size:17px}
-    @keyframes marquee{to{transform:translateX(-50%)}}
-
+    .logo{display:flex;align-items:center;gap:12px;font-family:"Archivo Black",Impact,sans-serif;font-size:20px;letter-spacing:-.035em;text-transform:uppercase}
+    .logo-mark{width:30px;height:30px;border:1px solid rgba(255,255,255,.34);display:grid;place-items:center;position:relative}
+    .logo-mark:before{content:"";width:8px;height:8px;background:var(--orange);border-radius:50%}
+    .navlinks{display:flex;gap:26px;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:800;color:#d6d4cf}
+    .navright{justify-self:end;display:flex;gap:10px;align-items:center}
+    .navbtn{padding:11px 15px;border:1px solid rgba(255,255,255,.25);font-size:10px;letter-spacing:.09em;text-transform:uppercase;font-weight:900;background:rgba(0,0,0,.18)}
+    .navbtn.primary{background:var(--paper);border-color:var(--paper);color:#111}
+    .hero{min-height:100svh;padding:170px 0 56px;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:radial-gradient(circle at 72% 30%,rgba(95,75,150,.18),transparent 22%),radial-gradient(circle at 82% 68%,rgba(242,138,46,.12),transparent 20%),linear-gradient(180deg,#0f1217 0,#090b0e 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:end;position:relative;z-index:2}
+    .hero h1{font-size:clamp(72px,9.7vw,164px);max-width:980px}
+    .hero-copy{padding-bottom:24px}
+    .hero-lead{font-size:16px;line-height:1.75;color:#c4c2bc;max-width:620px;margin:28px 0 0}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+    .cta{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:15px 19px;border:1px solid rgba(255,255,255,.32);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:900;transition:.2s}
+    .cta.primary{background:var(--paper);color:#111;border-color:var(--paper)}
+    .cta:hover{transform:translateY(-2px)}
+    .hero-side{min-height:650px;position:relative;border:1px solid var(--line);background:linear-gradient(145deg,#151920 0,#0c0f13 75%);overflow:hidden}
+    .hero-side:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,rgba(255,255,255,.06) 50%,transparent 50.2%),linear-gradient(0deg,transparent 49.8%,rgba(255,255,255,.04) 50%,transparent 50.2%);transform:perspective(780px) rotateX(61deg) scale(1.3);transform-origin:center bottom}
+    .jersey{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:min(82%,530px);filter:drop-shadow(0 30px 30px rgba(0,0,0,.45))}
+    .hero-badge{position:absolute;top:24px;left:24px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#aaa79f;font-weight:800}
+    .hero-code{position:absolute;right:24px;top:24px;text-align:right;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#aaa79f;font-weight:800}
+    .hero-code b{display:block;color:#fff;font-size:18px;letter-spacing:-.03em;margin-top:5px}
+    .flavour-dots{position:absolute;left:24px;bottom:24px;display:flex;gap:8px;align-items:center}
+    .dot{width:9px;height:9px;border-radius:50%}.dot.red{background:var(--red)}.dot.orange{background:var(--orange)}.dot.yellow{background:var(--yellow)}.dot.green{background:var(--green)}.dot.purple{background:var(--purple)}.dot.pink{background:var(--pink)}
+    .flavour-dots span{margin-left:8px;font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#9d9a93;font-weight:800}
+    .hero-meta{position:absolute;right:24px;bottom:24px;text-align:right;font-size:9px;text-transform:uppercase;letter-spacing:.13em;color:#a5a29b;line-height:1.7}
+    .scroll{position:absolute;right:28px;bottom:46%;transform:rotate(90deg);transform-origin:right bottom;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#77756f;font-weight:800}
+    .brand-strip{background:#101318;border-block:1px solid var(--line)}
+    .strip-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .strip-item{padding:22px 20px;border-right:1px solid var(--line)}.strip-item:last-child{border-right:0}
+    .strip-item strong{display:block;font-family:"Archivo Black",Impact,sans-serif;font-size:22px;letter-spacing:-.03em}
+    .strip-item span{display:block;margin-top:6px;color:#8f8e88;font-size:9px;letter-spacing:.1em;text-transform:uppercase}
     section{position:relative}
-    .intro{background:var(--paper);color:var(--ink);padding:110px 0}
-    .intro-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:72px;align-items:start}
-    .intro h2{font-size:clamp(54px,7.2vw,112px);max-width:930px}
-    .lead{font-size:clamp(20px,2.2vw,31px);line-height:1.22;font-weight:700;letter-spacing:-.025em;max-width:820px;margin:0 0 32px}
-    .bodycopy{font-size:15px;line-height:1.7;color:#4c4c47;max-width:680px}
-    .statline{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #bbb9ad}
-    .stat{padding:22px 14px 0 0}
-    .stat strong{display:block;font-family:Arial Black,Impact,sans-serif;font-size:42px;letter-spacing:-.05em}
-    .stat span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#6a6964}
-
-    .collections{padding:110px 0 124px}
-    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:42px}
-    .section-head h2{font-size:clamp(52px,6vw,92px)}
-    .section-head p{max-width:420px;color:#aaa;font-size:14px;line-height:1.65;margin:0}
-    .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-    .product{position:relative;min-height:630px;overflow:hidden;background:#181818}
-    .product.big{grid-column:span 7}
-    .product.small{grid-column:span 5}
-    .product img{transition:transform .7s cubic-bezier(.2,.7,.2,1);filter:saturate(.72)}
-    .product:hover img{transform:scale(1.035)}
-    .product:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 56%)}
-    .product-info{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;display:flex;justify-content:space-between;align-items:end;gap:16px}
-    .product h3{font-family:Arial Black,Impact,sans-serif;font-size:38px;letter-spacing:-.045em;text-transform:uppercase;line-height:.95;margin:5px 0 0}
-    .product small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#ddd}
-    .tag{background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);border-radius:999px;padding:9px 12px;font-size:10px;font-weight:900;text-transform:uppercase;white-space:nowrap}
-
-    .system{background:var(--lime);color:#090909;padding:105px 0}
-    .system-top{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:end}
-    .system h2{font-size:clamp(62px,8vw,130px)}
-    .system-top p{font-size:20px;line-height:1.45;font-weight:650;max-width:560px}
-    .system-grid{margin-top:70px;display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid #090909}
-    .system-card{padding:28px 32px 20px 0;min-height:250px;border-right:1px solid rgba(0,0,0,.35)}
-    .system-card:last-child{border-right:0;padding-left:32px}
-    .system-card:nth-child(2){padding-left:32px}
-    .num{font-family:Arial Black,Impact,sans-serif;font-size:14px}
-    .system-card h3{font-size:28px;margin:70px 0 12px;letter-spacing:-.04em;text-transform:uppercase}
-    .system-card p{font-size:13px;line-height:1.6;max-width:330px}
-
-    .teams{padding:115px 0;background:#101010}
-    .teams-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
-    .teams-media{min-height:760px;position:relative;overflow:hidden}
-    .teams-media:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.42),transparent 54%)}
-    .teams-copy{background:#f4f3ed;color:#0b0b0b;padding:58px;display:flex;flex-direction:column;justify-content:space-between}
-    .teams-copy h2{font-size:clamp(56px,6.4vw,98px);margin-top:18px}
-    .teams-copy .desc{font-size:18px;line-height:1.55;max-width:580px;color:#3e3e39}
-    .steps{margin-top:56px;border-top:1px solid #b9b7ad}
-    .step{display:grid;grid-template-columns:60px 1fr auto;gap:18px;align-items:center;border-bottom:1px solid #c9c7bd;padding:18px 0;font-size:13px}
-    .step b{font-size:11px;letter-spacing:.1em}
-    .step span:last-child{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:#666}
-
-    .sponsor{min-height:82svh;display:grid;place-items:center;text-align:center;overflow:hidden;background:#111}
-    .sponsor-bg{position:absolute;inset:0;opacity:.45}
-    .sponsor-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,rgba(0,0,0,.18),rgba(0,0,0,.9) 75%)}
-    .sponsor-content{position:relative;z-index:2;max-width:1040px;padding:120px 24px}
-    .sponsor h2{font-size:clamp(67px,9vw,145px)}
-    .sponsor p{font-size:17px;line-height:1.6;color:#d0d0c8;max-width:640px;margin:28px auto}
-
-    .launch{background:var(--paper);color:#0a0a0a;padding:110px 0}
-    .launch-grid{display:grid;grid-template-columns:1fr .85fr;gap:90px;align-items:start}
-    .launch h2{font-size:clamp(62px,8vw,125px)}
-    .launch p{font-size:17px;line-height:1.62;color:#4b4a45;max-width:590px}
-    .form{margin-top:36px;display:grid;grid-template-columns:1fr auto;border-bottom:2px solid #111}
-    .form input{border:0;background:transparent;padding:16px 0;font-size:17px;outline:none;min-width:0}
-    .form button{border:0;background:transparent;font-weight:950;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;padding:0 0 0 20px}
-    .form-note{font-size:11px;color:#777;margin-top:10px}
-    .launch-list{border-top:1px solid #bbb9b0;margin-top:10px}
-    .launch-item{display:flex;justify-content:space-between;gap:20px;padding:19px 0;border-bottom:1px solid #c8c5ba;font-size:12px;text-transform:uppercase;letter-spacing:.07em;font-weight:850}
-    .launch-item span:last-child{color:#777;text-align:right}
-
-    footer{padding:54px 0 38px;border-top:1px solid rgba(255,255,255,.13)}
-    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px}
-    .footer-logo{font-family:Arial Black,Impact,sans-serif;font-size:48px;letter-spacing:-.06em;text-transform:uppercase}
-    .footer-logo i{color:var(--lime);font-style:normal}
-    footer p,footer a{font-size:11px;line-height:1.65;color:#aaa}
-    .credits{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;text-align:right}
-    .proposal-note{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#777}
-
-    .modal{position:fixed;inset:0;background:rgba(0,0,0,.76);backdrop-filter:blur(10px);z-index:100;display:none;place-items:center;padding:20px}
-    .modal.open{display:grid}
-    .modal-card{background:var(--paper);color:#111;width:min(620px,100%);padding:36px;position:relative}
-    .modal-card h3{font-family:Arial Black,Impact,sans-serif;text-transform:uppercase;font-size:46px;letter-spacing:-.05em;margin:10px 0 8px}
-    .modal-card p{color:#575751;line-height:1.55;font-size:14px}
-    .close{position:absolute;top:16px;right:16px;border:0;background:#111;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer}
-    .modal-fields{display:grid;gap:12px;margin-top:24px}
-    .modal-fields input,.modal-fields select,.modal-fields textarea{width:100%;border:1px solid #ccc9bd;background:#fff;padding:14px;outline:none}
-    .modal-fields textarea{min-height:110px;resize:vertical}
-    .modal-submit{border:0;background:#111;color:#fff;padding:15px 18px;text-transform:uppercase;font-weight:900;letter-spacing:.08em;cursor:pointer}
-    .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:var(--lime);color:#111;padding:13px 18px;font-size:11px;text-transform:uppercase;font-weight:950;letter-spacing:.07em;z-index:120;opacity:0;pointer-events:none;transition:.25s}
-    .toast.show{opacity:1;transform:translate(-50%,0)}
-
-    @media (max-width:980px){
-      .wrap{width:min(var(--max),calc(100% - 28px))}
-      .navinner{grid-template-columns:1fr auto}.navlinks{display:none}.navright{justify-self:end}.navright .pill:first-child{display:none}
-      .hero-grid{grid-template-columns:1fr;padding-top:150px}.hero-meta{justify-self:start;margin-top:16px}.hero h1{font-size:clamp(68px,17vw,130px)}
-      .intro-grid,.system-top,.launch-grid{grid-template-columns:1fr;gap:38px}
-      .intro{padding:82px 0}.statline{grid-template-columns:1fr}.stat{border-bottom:1px solid #ccc8bd;padding:18px 0}.stat:last-child{border-bottom:0}
-      .product.big,.product.small{grid-column:span 12}.product{min-height:560px}
-      .system-grid{grid-template-columns:1fr}.system-card,.system-card:nth-child(2),.system-card:last-child{border-right:0;border-bottom:1px solid rgba(0,0,0,.35);padding:24px 0;min-height:190px}.system-card h3{margin-top:50px}
-      .teams-grid{grid-template-columns:1fr}.teams-media{min-height:560px}.teams-copy{padding:36px 28px}
-      .footer-grid{grid-template-columns:1fr}.credits{justify-content:flex-start;text-align:left}.proposal-note{flex-direction:column}
-    }
-    @media (max-width:600px){
-      .topbar{justify-content:flex-start;padding-left:14px;font-size:9px}.navinner{height:66px}.logo{font-size:18px}.pill{padding:9px 12px}
-      .hero-grid{padding-bottom:30px}.hero .sub{font-size:15px}.hero-actions{display:grid;grid-template-columns:1fr}.cta{justify-content:space-between}
-      .scrolltag{display:none}.section-head{display:block}.section-head p{margin-top:18px}
-      .collections,.teams,.launch{padding:78px 0}.product{min-height:500px}.product-info{left:18px;right:18px;bottom:18px}.product h3{font-size:30px}
-      .teams-copy{padding:30px 20px}.step{grid-template-columns:44px 1fr}.step span:last-child{display:none}
-      .form{grid-template-columns:1fr}.form button{text-align:left;padding:12px 0}.proposal-note{font-size:9px}
-    }
+    .intro{padding:118px 0;background:var(--paper);color:#111}
+    .intro-grid{display:grid;grid-template-columns:.68fr 1.32fr;gap:74px;align-items:start}
+    .intro h2{font-size:clamp(54px,6.6vw,106px);max-width:900px}
+    .intro .lead{font-size:clamp(20px,2.2vw,31px);line-height:1.25;font-weight:700;letter-spacing:-.026em;max-width:850px;margin:0 0 28px}
+    .intro .body{font-size:15px;line-height:1.78;color:#53514c;max-width:720px}
+    .flavour-codes{margin-top:46px;display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid #c5c1b7}
+    .flavour{padding:18px 12px 0 0}.swatch{width:100%;height:4px;margin-bottom:12px}.swatch.red{background:var(--red)}.swatch.orange{background:var(--orange)}.swatch.yellow{background:var(--yellow)}.swatch.green{background:var(--green)}.swatch.purple{background:var(--purple)}.swatch.pink{background:var(--pink)}
+    .flavour b{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase}.flavour small{font-size:9px;color:#77736b;text-transform:uppercase;letter-spacing:.08em}
+    .collection{padding:116px 0 126px;background:#0b0d10}
+    .section-head{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:44px}.section-head h2{font-size:clamp(52px,5.8vw,94px)}.section-head p{max-width:460px;color:#9f9d97;font-size:14px;line-height:1.75;margin:0}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.product{min-width:0;background:#12151a;border:1px solid var(--line)}
+    .product-art{height:430px;position:relative;display:grid;place-items:center;background:linear-gradient(180deg,#171a20,#11141a)}.product-art:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--product-accent,var(--orange))}
+    .product-number{position:absolute;top:18px;left:18px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#8f8d87;font-weight:800}
+    .silhouette{position:relative;background:#f0ede7}.silhouette.shirt{width:155px;height:220px;clip-path:polygon(24% 5%,40% 0,46% 12%,54% 12%,60% 0,76% 5%,100% 20%,85% 43%,75% 35%,75% 100%,25% 100%,25% 35%,15% 43%,0 20%)}.silhouette.shirt:before{content:"";position:absolute;left:47%;top:8%;width:8px;height:84%;background:var(--product-accent,var(--orange))}
+    .silhouette.short{width:170px;height:160px;clip-path:polygon(8% 0,92% 0,100% 100%,57% 90%,50% 50%,43% 90%,0 100%)}.silhouette.short:before{content:"";position:absolute;left:48%;top:0;width:7px;height:100%;background:var(--product-accent,var(--orange))}
+    .silhouette.jacket{width:185px;height:225px;clip-path:polygon(20% 0,44% 4%,50% 12%,56% 4%,80% 0,100% 20%,88% 45%,80% 36%,80% 100%,20% 100%,20% 36%,12% 45%,0 20%)}.silhouette.jacket:before{content:"";position:absolute;left:48%;top:0;width:7px;height:100%;background:var(--product-accent,var(--orange))}
+    .product-info{padding:19px 18px 21px;display:flex;justify-content:space-between;align-items:end;gap:14px}.product-info small{display:block;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#86847f}.product-info h3{font-size:15px;margin:6px 0 0}.product-info span{font-size:11px;color:#aaa8a2;font-weight:700}
+    .builder{padding:118px 0;background:#f1eee7;color:#111}.builder-head{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end;margin-bottom:46px}.builder-head h2{font-size:clamp(52px,6vw,98px)}.builder-head p{margin:0;max-width:540px;color:#5d5a54;line-height:1.75;font-size:14px}
+    .builder-shell{display:grid;grid-template-columns:1fr 420px;border:1px solid #c5c0b7;background:#0d1014}.stage{min-height:650px;position:relative;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#20252c 0,#11151a 52%,#0b0e12 100%);overflow:hidden}.stage:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,rgba(255,255,255,.08) 50%,transparent 50.2%),linear-gradient(0deg,transparent 49.8%,rgba(255,255,255,.06) 50%,transparent 50.2%);transform:perspective(850px) rotateX(60deg) scale(1.3);transform-origin:center bottom}
+    .kit-svg{position:relative;width:min(480px,80%);filter:drop-shadow(0 30px 24px rgba(0,0,0,.38))}.stage-label{position:absolute;top:20px;left:20px;color:#8e8b85;font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:800}.sport-pill{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);border:1px solid rgba(255,255,255,.2);padding:10px 13px;background:#0a0d11;color:#ccc9c2;font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+    .controls{padding:34px;background:#fff;color:#111;display:flex;flex-direction:column;justify-content:center}.control{display:flex;flex-direction:column;gap:8px;margin-bottom:17px}.control label{font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#77736c}.control input,.control select{height:48px;border:1px solid #d0cbc0;background:#faf9f6;padding:0 13px;outline:none}.control input[type="color"]{padding:5px}.control-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .btn{border:0;padding:15px 18px;background:#111;color:#fff;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:900;cursor:pointer}.micro{font-size:9px;line-height:1.55;color:#89857e;margin:12px 0 0}
+    .sponsor{padding:120px 0;background:#101318;color:#fff}.sponsor-grid{display:grid;grid-template-columns:1fr .9fr;gap:78px;align-items:start}.sponsor h2{font-size:clamp(58px,6.8vw,108px)}.sponsor-copy>p{font-size:15px;line-height:1.75;color:#aaa8a2;max-width:650px;margin:26px 0 0}.sponsor-steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:46px;border-top:1px solid var(--line)}.sponsor-steps span{padding:14px 8px;border-right:1px solid var(--line);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#aaa8a2;font-weight:800}.sponsor-steps span:last-child{border-right:0}
+    .form{background:#f3f0e9;color:#111;padding:30px}.form-top{display:flex;justify-content:space-between;padding-bottom:18px;margin-bottom:22px;border-bottom:1px solid #cbc7be;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#7e7a73;font-weight:800}.form label{display:flex;flex-direction:column;gap:7px;font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:#77736d;font-weight:800;margin-bottom:15px}.form input,.form select,.form textarea{border:1px solid #d0cbc2;background:#fff;color:#111;padding:13px;outline:none;resize:vertical}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-note{font-size:9px;color:#8a867e;text-align:center;margin:12px 0 0}
+    .vision{padding:118px 0;background:var(--paper);color:#111}.vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:78px}.quote{font-family:"Archivo Black",Impact,sans-serif;text-transform:uppercase;font-size:clamp(33px,3.8vw,63px);line-height:1.02;letter-spacing:-.043em;margin:0}.notes{border-top:1px solid #c8c3b9}.note{display:grid;grid-template-columns:54px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid #c8c3b9}.note>span{font-family:"Archivo Black",Impact,sans-serif;font-size:13px;color:var(--orange)}.note h3{font-size:15px;margin:0 0 7px}.note p{font-size:13px;line-height:1.68;color:#5f5c56;margin:0}
+    .closing{min-height:74vh;display:grid;place-items:center;text-align:center;padding:120px 24px;background:radial-gradient(circle at 50% 35%,rgba(242,138,46,.1),transparent 24%),#0b0d10}.closing-inner{max-width:1050px}.closing h2{font-size:clamp(65px,8.2vw,135px)}.closing p{max-width:700px;margin:30px auto 34px;color:#aaa8a1;line-height:1.75;font-size:14px}
+    footer{padding:46px 0 34px;border-top:1px solid var(--line);background:#090b0e}.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}.footer-logo{font-family:"Archivo Black",Impact,sans-serif;font-size:42px;letter-spacing:-.045em}.footer-right{text-align:right;font-size:10px;line-height:1.75;color:#77756f}.footer-note{display:flex;justify-content:space-between;gap:20px;margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:#67655f}
+    .toast{position:fixed;right:24px;bottom:24px;z-index:90;max-width:380px;background:var(--paper);color:#111;padding:16px 18px;border-left:4px solid var(--orange);font-size:12px;font-weight:700;box-shadow:0 20px 60px rgba(0,0,0,.35);transform:translateY(140%);transition:.35s}.toast.show{transform:translateY(0)}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:1100px){.navlinks{display:none}.hero-grid,.intro-grid,.builder-head,.builder-shell,.sponsor-grid,.vision-grid{grid-template-columns:1fr}.hero-side{min-height:600px}.products{grid-template-columns:1fr 1fr}.controls{border-top:1px solid #ddd}.flavour-codes{grid-template-columns:repeat(3,1fr)}.flavour:nth-child(-n+3){margin-bottom:18px}}
+    @media(max-width:720px){.wrap{width:min(100% - 36px,var(--max))}.navinner{height:68px}.navright .navbtn:not(.primary){display:none}.hero{padding-top:130px}.hero h1{font-size:clamp(58px,17vw,95px)}.hero-side{min-height:500px}.strip-grid{grid-template-columns:1fr 1fr}.strip-item:nth-child(2){border-right:0}.strip-item:nth-child(-n+2){border-bottom:1px solid var(--line)}.products{grid-template-columns:1fr}.product-art{height:350px}.control-row,.form-row{grid-template-columns:1fr}.sponsor-steps{grid-template-columns:1fr 1fr}.sponsor-steps span:nth-child(2){border-right:0}.sponsor-steps span:nth-child(-n+2){border-bottom:1px solid var(--line)}.footer-grid{grid-template-columns:1fr}.footer-right{text-align:left}.footer-note{flex-direction:column}.flavour-codes{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
   <div class="noise"></div>
-  <div class="topbar">Independent Malaysian performance wear — launch concept / 2026</div>
-
-  <nav>
-    <div class="wrap navinner">
-      <a class="logo" href="#top">SPORT<i>//01</i></a>
-      <div class="navlinks">
-        <a href="#drop">Drop 001</a>
-        <a href="#teams">Teamwear</a>
-        <a href="#sponsor">Sponsorship</a>
-      </div>
-      <div class="navright">
-        <button class="pill" data-modal="team">Team order</button>
-        <button class="pill lime" data-modal="early">Get early access</button>
-      </div>
-    </div>
-  </nav>
-
+  <div class="flavour-line"></div>
+  <div class="topnote">SportsBoom / Independent brand concept / Malaysia</div>
+  <nav><div class="wrap navinner"><a class="logo" href="#top"><span class="logo-mark"></span><span>SportsBoom</span></a><div class="navlinks"><a href="#drop">Drop 001</a><a href="#builder">Teamwear</a><a href="#sponsor">Sponsorship</a><a href="#vision">Vision</a></div><div class="navright"><a class="navbtn" href="#drop">Explore</a><a class="navbtn primary" href="#sponsor">Apply as a team</a></div></div></nav>
   <main id="top">
-    <section class="hero">
-      <div class="hero-media">
-        <img src="https://images.unsplash.com/photo-1777382141906-e66831584c00?auto=format&fit=crop&w=2200&q=88" alt="Athlete playing pickleball" />
-      </div>
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow">Built for Malaysia. Ready for everywhere.</div>
-          <h1 class="display">Your game.<br>Your rules.</h1>
-          <p class="sub">Performance sportswear for people who actually move. Court, pitch, gym, street — one system designed to work hard and look sharp doing it.</p>
-          <div class="hero-actions">
-            <a class="cta" href="#drop">Preview Drop 001 <span class="arrow">↘</span></a>
-            <button class="cta ghost" data-modal="early">Join launch list <span class="arrow">→</span></button>
-          </div>
-        </div>
-        <aside class="hero-meta">
-          <div class="meta-row"><span>Drop</span><span>001 / Launch</span></div>
-          <div class="meta-row"><span>Focus</span><span>Performance + Teamwear</span></div>
-          <div class="meta-row"><span>Sports</span><span>Multi-discipline</span></div>
-          <div class="meta-row"><span>Origin</span><span>Malaysia</span></div>
-        </aside>
-      </div>
-      <div class="scrolltag">Scroll to move ↓</div>
-    </section>
-
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>Pickleball <b>✦</b> Futsal <b>✦</b> Football <b>✦</b> Netball <b>✦</b> Run <b>✦</b> Train <b>✦</b> Paintball <b>✦</b> Everyday</span>
-        <span>Pickleball <b>✦</b> Futsal <b>✦</b> Football <b>✦</b> Netball <b>✦</b> Run <b>✦</b> Train <b>✦</b> Paintball <b>✦</b> Everyday</span>
-      </div>
-    </div>
-
-    <section class="intro">
-      <div class="wrap intro-grid">
-        <div>
-          <div class="eyebrow" style="color:#111">01 / The idea</div>
-        </div>
-        <div>
-          <h2 class="display">Not just gymwear. A home for every game.</h2>
-          <p class="lead">A modern Malaysian sports label can win by serving the space between global performance giants and cheap generic jerseys: credible performance, strong design, local community.</p>
-          <p class="bodycopy">Start tight with versatile technical tops and bottoms, then grow through club/team customisation, tournament drops and athlete-led storytelling. The brand should feel equally at home on a pickleball court, futsal pitch, run club or coffee stop after training.</p>
-          <div class="statline">
-            <div class="stat"><strong>01</strong><span>Unified performance system</span></div>
-            <div class="stat"><strong>03</strong><span>Launch pillars</span></div>
-            <div class="stat"><strong>∞</strong><span>Sports & communities</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="collections" id="drop">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">02 / Drop architecture</div>
-            <h2 class="display">Drop 001</h2>
-          </div>
-          <p>Concept product slots — ready to be replaced with the actual samples, colourways, names, prices and size runs once production is locked.</p>
-        </div>
-        <div class="cards">
-          <article class="product big">
-            <img src="https://images.unsplash.com/photo-1779862758053-0d4e29f93105?auto=format&fit=crop&w=1600&q=86" alt="Female pickleball athlete" />
-            <div class="product-info"><div><small>Court / Women</small><h3>Court//01</h3></div><span class="tag">Coming soon</span></div>
-          </article>
-          <article class="product small">
-            <img src="https://images.unsplash.com/photo-1763639700615-225fe7fdffff?auto=format&fit=crop&w=1400&q=86" alt="Runner starting a sprint" />
-            <div class="product-info"><div><small>Run / Men</small><h3>Pace//01</h3></div><span class="tag">Coming soon</span></div>
-          </article>
-          <article class="product small">
-            <img src="https://images.unsplash.com/photo-1770155590942-49d858bc5401?auto=format&fit=crop&w=1400&q=86" alt="Football player wearing a sports jersey" />
-            <div class="product-info"><div><small>Team / Unisex</small><h3>Kit//01</h3></div><span class="tag">Custom</span></div>
-          </article>
-          <article class="product big">
-            <img src="https://images.unsplash.com/photo-1776184042368-0ab3f098db2b?auto=format&fit=crop&w=1600&q=86" alt="Female sprinter on a track" />
-            <div class="product-info"><div><small>Train / Women</small><h3>Move//01</h3></div><span class="tag">Coming soon</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="system">
-      <div class="wrap">
-        <div class="system-top">
-          <div><div class="eyebrow" style="color:#090909">03 / Brand system</div><h2 class="display">Built to scale.</h2></div>
-          <p>The strongest launch is not one viral jersey. It is a repeatable system that can turn product drops, athlete content, club orders and events into one recognisable brand.</p>
-        </div>
-        <div class="system-grid">
-          <div class="system-card"><div class="num">01</div><h3>Performance</h3><p>Technical silhouettes, breathable construction, movement-first patterning and a visual language strong enough to stand without a giant logo.</p></div>
-          <div class="system-card"><div class="num">02</div><h3>Teamwear</h3><p>Low-friction custom kits for clubs, schools, social teams and corporate squads. One ordering path, one size system, one design standard.</p></div>
-          <div class="system-card"><div class="num">03</div><h3>Community</h3><p>Tournaments, run clubs, open play, creator seeding and selective sponsorship — the brand grows where people actually play.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="teams" id="teams">
-      <div class="wrap teams-grid">
-        <div class="teams-media">
-          <img src="https://images.unsplash.com/photo-1770155590942-49d858bc5401?auto=format&fit=crop&w=1600&q=88" alt="Team sports player" />
-        </div>
-        <div class="teams-copy">
-          <div>
-            <div class="eyebrow" style="color:#111">04 / Clubs & teams</div>
-            <h2 class="display">Your colours. Our system.</h2>
-            <p class="desc">A dedicated teamwear flow converts the demand already coming from football, futsal, netball, pickleball, paintball and school teams into structured orders instead of scattered DMs.</p>
-          </div>
-          <div>
-            <div class="steps">
-              <div class="step"><b>01</b><strong>Choose your sport + quantity</strong><span>Brief</span></div>
-              <div class="step"><b>02</b><strong>Upload logo + colours</strong><span>Identity</span></div>
-              <div class="step"><b>03</b><strong>Receive kit concept</strong><span>Design</span></div>
-              <div class="step"><b>04</b><strong>Approve size run + names</strong><span>Order</span></div>
-              <div class="step"><b>05</b><strong>Production + delivery</strong><span>Fulfilment</span></div>
-            </div>
-            <button class="cta" style="margin-top:28px" data-modal="team">Start a team order <span class="arrow">↗</span></button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="sponsor" id="sponsor">
-      <div class="sponsor-bg"><img src="https://images.unsplash.com/photo-1777382141906-e66831584c00?auto=format&fit=crop&w=2200&q=76" alt="Sports community" /></div>
-      <div class="sponsor-content">
-        <div class="eyebrow">05 / Partnerships</div>
-        <h2 class="display">Earn the badge.</h2>
-        <p>Sponsorship should be selective, measurable and easy to manage. A central partnership portal can collect every proposal in one format — sport, audience, calendar, deliverables and requested support — then surface only the best opportunities.</p>
-        <button class="cta" data-modal="sponsor">Submit partnership proposal <span class="arrow">→</span></button>
-      </div>
-    </section>
-
-    <section class="launch">
-      <div class="wrap launch-grid">
-        <div>
-          <div class="eyebrow" style="color:#111">06 / Launch</div>
-          <h2 class="display">Be first on court.</h2>
-          <p>Early access turns announcement momentum into an owned audience before stock lands. Capture email/WhatsApp intent now, segment by sport, then launch Drop 001 to the highest-intent groups first.</p>
-          <form class="form" id="early-form">
-            <input type="email" required placeholder="Your email address" aria-label="Email address" />
-            <button type="submit">Join early access →</button>
-          </form>
-          <div class="form-note">Demo capture only. Connect to the final CRM / WhatsApp flow at launch.</div>
-        </div>
-        <div class="launch-list">
-          <div class="launch-item"><span>01. Tease</span><span>Founder + athlete story</span></div>
-          <div class="launch-item"><span>02. Seed</span><span>Models, clubs, creators</span></div>
-          <div class="launch-item"><span>03. Reveal</span><span>Drop 001 campaign</span></div>
-          <div class="launch-item"><span>04. Convert</span><span>Web + TikTok + live commerce</span></div>
-          <div class="launch-item"><span>05. Repeat</span><span>Sport-specific capsules</span></div>
-        </div>
-      </div>
-    </section>
+    <section class="hero"><div class="wrap hero-grid"><div class="hero-copy reveal"><p class="eyebrow">Performance system / 2026 concept</p><h1 class="display">Built to move.<br><span class="accent">Made to boom.</span></h1><p class="hero-lead">A premium sportswear platform built around one idea: bring Hausboom's recognisable flavour energy into a more mature performance language for teams, athletes and local sporting culture.</p><div class="hero-actions"><a class="cta primary" href="#drop">Explore Drop 001 ↗</a><a class="cta" href="#builder">Build a team kit</a></div></div><div class="hero-side reveal"><div class="hero-badge">Drop 001 / Match jersey</div><div class="hero-code">SportsBoom performance<b>SB-01</b></div><svg class="jersey" viewBox="0 0 540 620" role="img" aria-label="SportsBoom performance jersey concept"><defs><linearGradient id="jerseyBase" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#f1eee8"/><stop offset="100%" stop-color="#cfcac1"/></linearGradient><filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="28" stdDeviation="18" flood-color="#000" flood-opacity=".38"/></filter></defs><g filter="url(#shadow)"><path d="M174 64 70 111 23 229l91 42 48-70v337c55 24 270 24 326 0V201l48 70 91-42-47-118-105-47-74 46H248z" transform="translate(-55 0)" fill="url(#jerseyBase)"/><path d="M197 67c25 55 116 55 142 0l-40 80h-62z" fill="#11151a"/><path d="M212 148h112l87 344c-71 14-148 14-219 0z" fill="#11151a"/><path d="M219 155h8l84 332h-8z" fill="#f28a2e"/><path d="M233 155h4l84 332h-4z" fill="#5f4b96"/><text x="267" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="28" fill="#f4f1ea">SPORTSBOOM</text><text x="267" y="421" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="92" fill="#f4f1ea">01</text></g></svg><div class="flavour-dots"><i class="dot red"></i><i class="dot orange"></i><i class="dot yellow"></i><i class="dot green"></i><i class="dot purple"></i><i class="dot pink"></i><span>Flavour codes</span></div><div class="hero-meta">Court / pitch / training<br>Malaysia / prototype</div></div></div><div class="scroll">Scroll to explore</div></section>
+    <section class="brand-strip"><div class="wrap strip-grid"><div class="strip-item"><strong>01</strong><span>Premium brand system</span></div><div class="strip-item"><strong>04</strong><span>Launch-ready product families</span></div><div class="strip-item"><strong>01</strong><span>Teamwear intake flow</span></div><div class="strip-item"><strong>∞</strong><span>Clubs, schools and communities</span></div></div></section>
+    <section class="intro"><div class="wrap intro-grid"><div><p class="eyebrow dark">Brand direction / Hausboom DNA</p></div><div class="reveal"><h2 class="display">Same energy.<br>Sharper language.</h2><p class="lead">SportsBoom should feel connected to Hausboom without looking like beverage packaging placed on a jersey.</p><p class="body">The premium direction keeps the base almost monochrome, then uses Hausboom's familiar flavour colours as controlled identifiers: piping, trims, collection codes, team accents and campaign details. That makes the link recognisable while keeping the product credible as serious performance apparel.</p><div class="flavour-codes"><div class="flavour"><div class="swatch red"></div><b>Strawberry</b><small>Energy code</small></div><div class="flavour"><div class="swatch orange"></div><b>Mango</b><small>Primary accent</small></div><div class="flavour"><div class="swatch yellow"></div><b>Lemonade</b><small>Signal code</small></div><div class="flavour"><div class="swatch green"></div><b>Guava</b><small>Training code</small></div><div class="flavour"><div class="swatch purple"></div><b>Blackcurrant</b><small>Elite code</small></div><div class="flavour"><div class="swatch pink"></div><b>Lychee</b><small>Lifestyle code</small></div></div></div></div></section>
+    <section id="drop" class="collection"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow">Drop 001 / Core system</p><h2 class="display">The first four.</h2></div><p>A restrained launch range gives the brand a clear visual language before expanding into sport-specific capsules and teamwear.</p></div><div class="products"><article class="product reveal" style="--product-accent:var(--orange)"><div class="product-art"><span class="product-number">01 / Match</span><div class="silhouette shirt"></div></div><div class="product-info"><div><small>Performance</small><h3>Match Jersey</h3></div><span>SB-M01</span></div></article><article class="product reveal" style="--product-accent:var(--green)"><div class="product-art"><span class="product-number">02 / Train</span><div class="silhouette shirt"></div></div><div class="product-info"><div><small>Training</small><h3>Training Tee</h3></div><span>SB-T02</span></div></article><article class="product reveal" style="--product-accent:var(--yellow)"><div class="product-art"><span class="product-number">03 / Match</span><div class="silhouette short"></div></div><div class="product-info"><div><small>Performance</small><h3>Competition Short</h3></div><span>SB-M03</span></div></article><article class="product reveal" style="--product-accent:var(--purple)"><div class="product-art"><span class="product-number">04 / Arrive</span><div class="silhouette jacket"></div></div><div class="product-info"><div><small>Lifestyle</small><h3>Warm-Up Jacket</h3></div><span>SB-A04</span></div></article></div></div></section>
+    <section id="builder" class="builder"><div class="wrap"><div class="builder-head reveal"><div><p class="eyebrow dark">Teamwear / Digital intake</p><h2 class="display">Your colours.<br>Your crest.<br>Your team.</h2></div><p>Give every club a controlled customisation system instead of open-ended design chaos. Teams choose a sport, base colour and accent code, then submit one clean brief for quotation.</p></div><div class="builder-shell reveal"><div class="stage"><div class="stage-label">Live preview / SB Teamwear</div><svg class="kit-svg" viewBox="0 0 500 570" role="img" aria-label="Interactive SportsBoom team jersey preview"><path id="kit-body" d="M170 64 75 108 34 216l84 38 42-62v310c53 25 227 25 280 0V192l42 62 84-38-41-108-95-44-67 42H237z" fill="#11151a"/><path id="kit-panel" d="M202 119h96l55 378c-63 10-137 10-200 0z" fill="#f28a2e" opacity=".95"/><path d="M191 67c23 46 94 46 118 0l-31 68h-56z" fill="#ece8e0"/><text x="250" y="242" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="900" fill="#f3efe8">SPORTSBOOM</text><text id="kit-name" x="250" y="318" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="800" letter-spacing="3" fill="#f3efe8">MERI</text><text id="kit-number" x="250" y="410" text-anchor="middle" font-family="Arial,sans-serif" font-size="92" font-weight="900" fill="#f3efe8">48</text></svg><div id="sport-pill" class="sport-pill">PICKLEBALL / MATCH</div></div><form class="controls" onsubmit="return false;"><div class="control"><label for="sport">Sport</label><select id="sport"><option>Pickleball</option><option>Football</option><option>Futsal</option><option>Netball</option><option>Paintball</option><option>Running</option></select></div><div class="control-row"><div class="control"><label for="baseColor">Base</label><input id="baseColor" type="color" value="#11151a" /></div><div class="control"><label for="accentColor">Accent</label><input id="accentColor" type="color" value="#f28a2e" /></div></div><div class="control"><label for="playerName">Player name</label><input id="playerName" maxlength="12" value="MERI" /></div><div class="control"><label for="playerNumber">Number</label><input id="playerNumber" type="number" min="0" max="99" value="48" /></div><button id="briefBtn" class="btn" type="button">Generate team brief ↗</button><p class="micro">Prototype interaction. Production version can capture crest files, player lists, quantities and export a quotation-ready brief.</p></form></div></div></section>
+    <section id="sponsor" class="sponsor"><div class="wrap sponsor-grid"><div class="sponsor-copy reveal"><p class="eyebrow">Sponsorship / Structured inbound</p><h2 class="display">Stop sorting<br>teams in the DMs.</h2><p>SportsBoom can turn the sponsorship demand already happening into a clean qualification funnel for schools, clubs and communities. Every application arrives with the context needed to score it properly.</p><div class="sponsor-steps"><span>01 / Qualify</span><span>02 / Score</span><span>03 / Shortlist</span><span>04 / Sponsor</span></div></div><form id="sponsorForm" class="form reveal"><div class="form-top"><span>SportsBoom team application</span><span>01 / 04</span></div><label>Team / school / club name<input required name="team" placeholder="e.g. SBPI Gombak Futsal" /></label><div class="form-row"><label>Sport<select name="sport" required><option value="">Select sport</option><option>Football</option><option>Futsal</option><option>Pickleball</option><option>Netball</option><option>Paintball</option><option>Running</option><option>Other</option></select></label><label>Level<select name="level" required><option value="">Select level</option><option>School</option><option>University</option><option>Community Club</option><option>Semi-Pro</option><option>Professional</option></select></label></div><div class="form-row"><label>Team size<input type="number" name="size" min="1" placeholder="24" /></label><label>Social reach<input name="reach" placeholder="e.g. 18K combined" /></label></div><label>Why should SportsBoom back you?<textarea name="pitch" rows="4" placeholder="Tournament calendar, achievements, community story, content plan..."></textarea></label><button class="btn" type="submit">Submit application ↗</button><p class="form-note">Concept form. No data is transmitted in this preview.</p></form></div></section>
+    <section id="vision" class="vision"><div class="wrap vision-grid"><div class="reveal"><p class="eyebrow dark">Why this fits / Strategic direction</p><blockquote class="quote">The opportunity is bigger than selling jerseys. Build the system that turns local teams into the brand's distribution, content and community network.</blockquote></div><div class="notes reveal"><div class="note"><span>01</span><div><h3>Founder-sport fit is authentic</h3><p>Azzim is already active in pickleball, so the move into sportswear has a real founder connection instead of feeling like an unrelated category extension.</p></div></div><div class="note"><span>02</span><div><h3>Demand appeared before launch</h3><p>Schools and teams across multiple sports were already asking for sponsorship. That gives SportsBoom a community acquisition engine before the first product drop.</p></div></div><div class="note"><span>03</span><div><h3>Hausboom provides recognisable equity</h3><p>The flavour colours and Boom naming provide a familiar bridge, while the restrained design language keeps SportsBoom credible as a performance label.</p></div></div><div class="note"><span>04</span><div><h3>The website becomes operational</h3><p>Commerce, team orders, sponsorship intake and CRM-ready data can all live under one premium brand front door.</p></div></div></div></div></section>
+    <section class="closing"><div class="closing-inner reveal"><p class="eyebrow">SportsBoom / Premium concept direction</p><h2 class="display">Same boom.<br><span class="accent">New arena.</span></h2><p>A sportswear identity that carries the energy of Hausboom without copying the beverage aesthetic. More performance brand, less novelty brand.</p><a class="cta primary" href="#top">Back to top ↑</a></div></section>
   </main>
-
-  <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div><div class="footer-logo">SPORT<i>//01</i></div><p>Temporary concept identity for an unreleased Malaysian sportswear brand. Replace with the official name, mark and campaign assets once confirmed.</p></div>
-        <div class="credits"><a href="https://unsplash.com/@bhongbahala10" target="_blank" rel="noreferrer">Photo: Bhong Bahala</a><a href="https://unsplash.com/@windtan" target="_blank" rel="noreferrer">Photo: Wind Tan</a><a href="https://unsplash.com/@davidvilches" target="_blank" rel="noreferrer">Photo: David Vilches</a><a href="https://unsplash.com/@peterzhan" target="_blank" rel="noreferrer">Photo: Peter Zhan</a><a href="https://unsplash.com/@jakubklucky" target="_blank" rel="noreferrer">Photo: Jakub Klucký</a></div>
-      </div>
-      <div class="proposal-note"><span>Private proposal concept / not affiliated with the final brand</span><span>Designed as a launch-ready DTC + teamwear architecture</span></div>
-    </div>
-  </footer>
-
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal-card">
-      <button class="close" aria-label="Close">×</button>
-      <div class="eyebrow" style="color:#111" id="modal-eye">Launch form</div>
-      <h3 id="modal-title">Get early access</h3>
-      <p id="modal-desc">Tell us where you play and we’ll put you on the right list.</p>
-      <form class="modal-fields" id="modal-form">
-        <input required placeholder="Name" />
-        <input type="email" required placeholder="Email" />
-        <select id="modal-select"><option>Pickleball</option><option>Futsal</option><option>Football</option><option>Netball</option><option>Running</option><option>Training / Gym</option><option>Paintball</option><option>Other</option></select>
-        <textarea id="modal-text" placeholder="Anything we should know?"></textarea>
-        <button class="modal-submit" type="submit">Submit →</button>
-      </form>
-    </div>
-  </div>
-  <div class="toast" id="toast">Demo submitted — ready to connect to a real backend.</div>
-
+  <footer><div class="wrap"><div class="footer-grid"><div class="footer-logo">SportsBoom</div><div class="footer-right">Independent proposal concept prepared for Azzim Zahid.<br>Not an official Hausboom or Bulan Bintang website.</div></div><div class="footer-note"><span>Performance / Teamwear / Sponsorship / Community</span><span>Malaysia / 2026 concept</span></div></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script>
-    const modal=document.getElementById('modal');
-    const title=document.getElementById('modal-title');
-    const eye=document.getElementById('modal-eye');
-    const desc=document.getElementById('modal-desc');
-    const select=document.getElementById('modal-select');
-    const text=document.getElementById('modal-text');
-    const toast=document.getElementById('toast');
-    const configs={
-      early:{eye:'Launch list',title:'Get early access',desc:'Tell us where you play and we’ll put you on the right launch list.',placeholder:'Anything we should know?'},
-      team:{eye:'Teamwear',title:'Start a team order',desc:'Give us the sport and a quick brief. The final build can route this directly into a quote workflow.',placeholder:'Team name, estimated quantity, colours, deadline...'},
-      sponsor:{eye:'Partnerships',title:'Submit a proposal',desc:'One structured intake for sponsorship requests — easier to review, compare and shortlist.',placeholder:'Organisation, event, audience, dates, requested support, deliverables...'}
-    };
-    function openModal(type){const c=configs[type]||configs.early;eye.textContent=c.eye;title.textContent=c.title;desc.textContent=c.desc;text.placeholder=c.placeholder;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-    function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
-    document.querySelectorAll('[data-modal]').forEach(b=>b.addEventListener('click',()=>openModal(b.dataset.modal)));
-    document.querySelector('.close').addEventListener('click',closeModal);
-    modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-    function flash(){toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600)}
-    document.getElementById('modal-form').addEventListener('submit',e=>{e.preventDefault();closeModal();flash();e.target.reset()});
-    document.getElementById('early-form').addEventListener('submit',e=>{e.preventDefault();flash();e.target.reset()});
+    const q=s=>document.querySelector(s), qa=s=>[...document.querySelectorAll(s)];
+    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+    qa('.reveal').forEach(el=>observer.observe(el));
+    const baseColor=q('#baseColor'),accentColor=q('#accentColor'),playerName=q('#playerName'),playerNumber=q('#playerNumber'),sport=q('#sport'),body=q('#kit-body'),panel=q('#kit-panel'),nameText=q('#kit-name'),numberText=q('#kit-number'),sportPill=q('#sport-pill');
+    function updateKit(){body.setAttribute('fill',baseColor.value);panel.setAttribute('fill',accentColor.value);nameText.textContent=(playerName.value||'PLAYER').toUpperCase();const n=Math.max(0,Math.min(99,Number(playerNumber.value||0)));numberText.textContent=String(n).padStart(2,'0');sportPill.textContent=`${sport.value.toUpperCase()} / MATCH`;}
+    [baseColor,accentColor,playerName,playerNumber,sport].forEach(el=>el.addEventListener('input',updateKit));updateKit();
+    let timer;function toast(msg){const el=q('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>el.classList.remove('show'),3600)}
+    q('#briefBtn').addEventListener('click',()=>toast(`Team brief ready: ${sport.value} / ${playerName.value.toUpperCase()} / #${String(playerNumber.value).padStart(2,'0')}. Production version can export this into a quotation workflow.`));
+    q('#sponsorForm').addEventListener('submit',e=>{e.preventDefault();if(!e.currentTarget.reportValidity())return;toast('Application captured in prototype mode. Production version would score and route this lead automatically.')});
   </script>
 </body>
 </html>
